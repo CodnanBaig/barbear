@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Logo from '../../components/Logo'
 import SiteHeader from '../../components/SiteHeader'
 import Footer from '../../components/Footer'
+import { SPORT_IMAGES } from '../../lib/visuals'
 
 export const metadata = { title: 'Our Story' }
 
@@ -10,7 +11,7 @@ export default function StoryPage() {
   return <main>
     <section className="story-hero">
       <SiteHeader theme="dark" absolute />
-      <div className="story-hero-media" data-parallax="0.1"><Image src="/products/oversize-range.webp" alt="BARBEAR collection" fill priority sizes="100vw" /></div>
+      <div className="story-hero-media" data-parallax="0.1"><Image src={SPORT_IMAGES.roadRun} alt="Athlete running through the city" fill priority sizes="100vw" /></div>
       <div className="story-hero-overlay" />
       <div className="story-hero-copy"><span>OUR STORY / UNITED ARAB EMIRATES</span><h1>BORN IN<br/><em>HEAT.</em></h1><p>BARBEAR started with a simple belief: performance wear can be technically serious without looking like equipment.</p></div>
     </section>
