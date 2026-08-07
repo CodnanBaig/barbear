@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SiteHeader from '../../components/SiteHeader'
 import Footer from '../../components/Footer'
+import { SPORT_IMAGES } from '../../lib/visuals'
 
 export const metadata = { title: 'Performance' }
 
@@ -9,7 +10,7 @@ export default function PerformancePage() {
   return <main className="performance-page">
     <section className="lab-hero">
       <SiteHeader theme="dark" absolute />
-      <div className="lab-image" data-parallax="0.1"><Image src="/products/hybrid-shorts.webp" alt="BARBEAR technical shorts" fill priority sizes="100vw" /></div>
+      <div className="lab-image" data-parallax="0.1"><Image src={SPORT_IMAGES.sprintMoody} alt="Runner in a high-output sprint" fill priority sizes="100vw" /></div>
       <div className="lab-grid" />
       <div className="lab-hero-copy"><span>PERFORMANCE LAB / DXB</span><h1>BUILT TO<br/><em>OUTWORK.</em></h1><p>Material systems designed around sweat, heat, repetition and recovery.</p></div>
       <div className="lab-readout"><b>41°C</b><span>TEST ENVIRONMENT</span></div>
@@ -24,7 +25,7 @@ export default function PerformancePage() {
     </section>
 
     <section className="lab-break" data-progress>
-      <div className="lab-break-media" data-parallax="0.12"><Image src="/editorial/hero-men.webp" alt="Athlete wearing BARBEAR" fill sizes="100vw" /></div>
+      <div className="lab-break-media" data-parallax="0.12"><Image src={SPORT_IMAGES.trackStart} alt="Athlete preparing on the track" fill sizes="100vw" /></div>
       <div className="lab-break-copy" data-reveal><span>FIELD TEST / DUBAI</span><h2>HEAT IS PART<br/>OF THE <em>BRIEF.</em></h2></div>
     </section>
 
