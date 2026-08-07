@@ -23,10 +23,25 @@ export default function SiteHeader({ theme = 'dark', absolute = false }) {
     return () => window.removeEventListener('scroll', update)
   }, [])
 
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = menuOpen ? 'hidden' : previousOverflow
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [menuOpen])
+
   return (
     <>
       <header className={`header ${absolute ? 'header-absolute' : ''} header-${theme} ${scrolled ? 'header-scrolled' : ''}`}>
-        <Link href="/" className="header-logo" aria-label="BARBEAR home"><Logo tone={theme === 'light' ? 'dark' : 'light'} /></Link>
+        <Link href="/" className="header-logo" aria-label="BARBEAR home" onClick={() => setMenuOpen(false)}><Logo tone={theme === 'light' ? 'dark' : 'light'} /></Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {nav.map(([href, label]) => <Link href={href} key={href}><span>{label}</span></Link>)}
         </nav>
@@ -39,7 +54,7 @@ export default function SiteHeader({ theme = 'dark', absolute = false }) {
           </button>
         </div>
       </header>
-      <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`}>
+      <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`} aria-hidden={!menuOpen}>
         <div className="mobile-menu-inner">
           {nav.map(([href, label], i) => (
             <Link href={href} key={href} onClick={() => setMenuOpen(false)}>
