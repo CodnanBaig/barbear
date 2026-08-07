@@ -3,13 +3,14 @@ import CollectionHero from '../../components/CollectionHero'
 import ProductCard from '../../components/ProductCard'
 import Footer from '../../components/Footer'
 import { products } from '../../lib/products'
+import { SPORT_IMAGES } from '../../lib/visuals'
 
 export const metadata = { title: 'Men' }
 
 export default function MenPage() {
   const mens = products.filter(p => p.gender === 'men')
   return <main>
-    <CollectionHero eyebrow="MEN / DROP 01" title="BUILT TO" outline="MOVE." image="/editorial/hero-men.webp" position="50% 52%" stat="TRAIN / RUN / LIFESTYLE" />
+    <CollectionHero eyebrow="MEN / DROP 01" title="BUILT TO" outline="MOVE." image={SPORT_IMAGES.trackStart} position="50% 48%" stat="TRAIN / RUN / LIFESTYLE" />
     <section className="collection-intro" data-reveal>
       <span className="eyebrow dark">MEN / PERFORMANCE SYSTEM</span>
       <h2>NO OFF-DAYS.<br/><em>NO DEAD WEIGHT.</em></h2>
