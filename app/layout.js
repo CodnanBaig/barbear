@@ -1,4 +1,5 @@
 import './globals.css'
+import './responsive.css'
 import MotionSystem from '../components/MotionSystem'
 
 export const metadata = {
