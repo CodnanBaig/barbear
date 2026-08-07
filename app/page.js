@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader'
 import ProductCard from '../components/ProductCard'
 import Footer from '../components/Footer'
 import { products } from '../lib/products'
+import { SPORT_IMAGES } from '../lib/visuals'
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <section className="home-hero" data-progress>
         <SiteHeader theme="dark" absolute />
         <div className="home-hero-image" data-parallax="0.12">
-          <Image src="/editorial/hero-men.webp" alt="BARBEAR athlete in performance apparel" fill priority sizes="100vw" />
+          <Image src={SPORT_IMAGES.heroMen} alt="Athlete training outdoors" fill priority sizes="100vw" />
         </div>
         <div className="home-hero-grid" aria-hidden="true" />
         <div className="home-hero-wash" />
@@ -50,7 +51,7 @@ export default function Home() {
       </section>
 
       <section className="pressure-section" data-progress>
-        <div className="pressure-media" data-parallax="0.11"><Image src="/editorial/women-training.jpg" alt="BARBEAR training system" fill sizes="100vw" /></div>
+        <div className="pressure-media" data-parallax="0.11"><Image src={SPORT_IMAGES.womenStrength} alt="Athlete strength training" fill sizes="100vw" /></div>
         <div className="pressure-overlay" />
         <div className="pressure-ghost" aria-hidden="true">PRESSURE</div>
         <div className="pressure-copy" data-reveal>
@@ -68,14 +69,14 @@ export default function Home() {
 
       <section className="category-gates">
         <Link href="/men" className="category-gate category-men" data-reveal>
-          <Image src="/products/oversize-range.webp" alt="Shop BARBEAR men" fill sizes="50vw" />
+          <Image src={SPORT_IMAGES.sprintMoody} alt="Shop BARBEAR men" fill sizes="50vw" />
           <div className="category-mask" />
           <span>01 / MEN</span>
           <h3>TRAIN.<br/>RUN.<br/><em>REPEAT.</em></h3>
           <b>SHOP MEN ↗</b>
         </Link>
         <Link href="/women" className="category-gate category-women" data-reveal>
-          <Image src="/editorial/women-crop.jpg" alt="Shop BARBEAR women" fill sizes="50vw" />
+          <Image src={SPORT_IMAGES.womenStretch} alt="Shop BARBEAR women" fill sizes="50vw" />
           <div className="category-mask" />
           <span>02 / WOMEN</span>
           <h3>SCULPT.<br/>MOVE.<br/><em>OWN IT.</em></h3>
@@ -97,14 +98,14 @@ export default function Home() {
       </section>
 
       <section className="editorial-band">
-        <div className="editorial-img editorial-a" data-reveal><Image src="/products/hybrid-shorts.webp" alt="Hybrid shorts detail" fill sizes="33vw" /></div>
+        <div className="editorial-img editorial-a" data-reveal><Image src={SPORT_IMAGES.trackStart} alt="Runner at the starting blocks" fill sizes="33vw" /></div>
         <div className="editorial-center" data-reveal>
           <span>BARBEAR / DUBAI</span>
           <h2>THE UNIFORM<br/><em>AFTER THE WORK.</em></h2>
           <p>From first rep to last light. One visual language, built across training and everyday movement.</p>
           <Link href="/story">READ THE STORY ↗</Link>
         </div>
-        <div className="editorial-img editorial-b" data-reveal><Image src="/products/womens-set.webp" alt="Women's training set" fill sizes="33vw" /></div>
+        <div className="editorial-img editorial-b" data-reveal><Image src={SPORT_IMAGES.womenPortrait} alt="Athlete in performance wear" fill sizes="33vw" /></div>
       </section>
 
       <section className="final-cta">
